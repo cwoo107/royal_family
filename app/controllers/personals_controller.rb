@@ -1,15 +1,20 @@
 class PersonalsController < ApplicationController
   before_action :set_personal, only: [:show, :edit, :update, :destroy]
+  before_action :authenticate_user!
 
   # GET /personals
   # GET /personals.json
   def index
     @personals = Personal.all
+    @personals = current_user.personal
   end
 
   # GET /personals/1
   # GET /personals/1.json
   def show
+    #if current_user.personal = nil
+     # {redirect_to new_personal_path}
+    #end
   end
 
   # GET /personals/new
@@ -25,6 +30,7 @@ class PersonalsController < ApplicationController
   # POST /personals.json
   def create
     @personal = Personal.new(personal_params)
+    @personal.user_id = current_user.id
 
     respond_to do |format|
       if @personal.save
