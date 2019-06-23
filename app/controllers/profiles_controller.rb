@@ -1,10 +1,21 @@
 class ProfilesController < ApplicationController
   before_action :set_profile, only: [:show, :edit, :update, :destroy]
+  before_action :authenticate_user!
+  
 
   # GET /profiles
   # GET /profiles.json
+  def no_profile
+    @profile = current_user.profile
+    if current_user.profile?
+    else
+      redirect_to new_profile_path
+    end
+  end
+
   def index
     @profiles = Profile.all
+    @profiles = current_user.profile
   end
 
   # GET /profiles/1
@@ -25,6 +36,7 @@ class ProfilesController < ApplicationController
   # POST /profiles.json
   def create
     @profile = Profile.new(profile_params)
+    @profile.user_id = current_user.id
 
     respond_to do |format|
       if @profile.save

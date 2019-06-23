@@ -1,43 +1,51 @@
+<div class='container rounded' style='background: white !important; padding-bottom:50px;' >
+
 <p id="notice"><%= notice %></p>
 
-<h1>Profiles</h1>
+  <div class='row' style='padding-top:50px'>
+    <div class='col-md-4'>
+      <% if current_user.profile %>
+        <h5 style='text-align:left !important;'> Name: <%= current_user.profile.first_name %><%= current_user.profile.last_name %> </h5>
+        <h5 style='text-align:left !important;'> Email: <small><%= current_user.email %></small> </h5>
+        <h5 style='text-align:left !important;'> Phone: <small><%= current_user.profile.phone %></small> </h5>
+        <h5 style='text-align:left !important;'> Address: <small><%= current_user.profile.address %></small> </h5>
+        <h6> <%= link_to 'Edit', edit_profile_path(current_user.profile) %> </h6>
+      <% else %>
+       
+        <h5><%= link_to 'Create Your Profile', new_profile_path %></h5>
+        <% end %>
+    </div>
+    <div class="mycontent-left"></div>
 
-<table>
-  <thead>
-    <tr>
-      <th>First name</th>
-      <th>Last name</th>
-      <th>Phone</th>
-      <th>Address</th>
-      <th>Street</th>
-      <th>City</th>
-      <th>State</th>
-      <th>Zip</th>
-      <th>User</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
+    <div class='col-md-5 offset-md-1'>
+        <div class='container-fluid text-center'>
+          <div class='row' style='padding-top:15px'>
+            <div class='col-md-6'>
+              <button type="button" class="btn btn-info">Personal Profile</button>
+            </div>
+            <div class='col-md-6'>
+              <button type="button" class="btn btn-info">Personal References</button>
+            </div>
+          </div>
+          <div class='row' style='padding-top:15px'>
+            <div class='col-md-6'>
+              <button type="button" class="btn btn-info">Record Of Education</button>
+            </div>
+            <div class='col-md-6'>
+              <button type="button" class="btn btn-info">Criminal Background</button>
+            </div>
+          </div>
 
-  <tbody>
-    <% @profiles.each do |profile| %>
-      <tr>
-        <td><%= profile.first_name %></td>
-        <td><%= profile.last_name %></td>
-        <td><%= profile.phone %></td>
-        <td><%= profile.address %></td>
-        <td><%= profile.street %></td>
-        <td><%= profile.city %></td>
-        <td><%= profile.state %></td>
-        <td><%= profile.zip %></td>
-        <td><%= profile.user %></td>
-        <td><%= link_to 'Show', profile %></td>
-        <td><%= link_to 'Edit', edit_profile_path(profile) %></td>
-        <td><%= link_to 'Destroy', profile, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+          <div class='row'>
 
-<br>
+        </div>
+      </div>
+    </div>
+  </div>
 
-<%= link_to 'New Profile', new_profile_path %>
+
+
+<style type="text/css">.mycontent-left {
+  border-left: 3px solid #F2F7F9 !important; 
+}
+</style>
