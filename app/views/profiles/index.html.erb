@@ -4,11 +4,12 @@
 
   <div class='row' style='padding-top:50px'>
     <div class='col-md-4'>
+    <h4> About Me </h4>
       <% if current_user.profile %>
-        <h5 style='text-align:left !important;'> Name: <%= current_user.profile.first_name %><%= current_user.profile.last_name %> </h5>
-        <h5 style='text-align:left !important;'> Email: <small><%= current_user.email %></small> </h5>
-        <h5 style='text-align:left !important;'> Phone: <small><%= current_user.profile.phone %></small> </h5>
-        <h5 style='text-align:left !important;'> Address: <small><%= current_user.profile.address %></small> </h5>
+        <h5 style='text-align:left !important;'> <a style='padding-left:10px'>Name: <%= current_user.profile.first_name %> <%= current_user.profile.last_name %> </a></h5>
+        <h5 style='text-align:left !important;'> <a style='padding-left:10px'>Email: <%= current_user.email %> </a></h5>
+        <h5 style='text-align:left !important;'> <a style='padding-left:10px'>Phone: <%= current_user.profile.phone %> </a></h5>
+        <h5 style='text-align:left !important;'> <a style='padding-left:10px'>Address: <%= current_user.profile.address %> </a></h5>
         <h6> <%= link_to 'Edit', edit_profile_path(current_user.profile) %> </h6>
       <% else %>
        
