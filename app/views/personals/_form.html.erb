@@ -1,0 +1,132 @@
+<%= form_with(model: personal, local: true) do |form| %>
+  <% if personal.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(personal.errors.count, "error") %> prohibited this personal from being saved:</h2>
+
+      <ul>
+      <% personal.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :birthdate %>
+    <%= form.text_field :birthdate %>
+  </div>
+
+  <div class="field">
+    <%= form.label :sex %>
+    <%= form.text_field :sex %>
+  </div>
+
+  <div class="field">
+    <%= form.label :married %>
+    <%= form.check_box :married %>
+  </div>
+
+  <div class="field">
+    <%= form.label :occupation %>
+    <%= form.text_field :occupation %>
+  </div>
+
+  <div class="field">
+    <%= form.label :employer %>
+    <%= form.text_field :employer %>
+  </div>
+
+  <div class="field">
+    <%= form.label :years_in_state %>
+    <%= form.text_field :years_in_state %>
+  </div>
+
+  <div class="field">
+    <%= form.label :months_in_state %>
+    <%= form.text_field :months_in_state %>
+  </div>
+
+  <div class="field">
+    <%= form.label :emergency_contact %>
+    <%= form.text_field :emergency_contact %>
+  </div>
+
+  <div class="field">
+    <%= form.label :relationship %>
+    <%= form.text_field :relationship %>
+  </div>
+
+  <div class="field">
+    <%= form.label :emer_phone %>
+    <%= form.text_field :emer_phone %>
+  </div>
+
+  <div class="field">
+    <%= form.label :shirt_size %>
+    <%= form.text_field :shirt_size %>
+  </div>
+
+  <div class="field">
+    <%= form.label :cpr %>
+    <%= form.check_box :cpr %>
+  </div>
+
+  <div class="field">
+    <%= form.label :first_aid %>
+    <%= form.check_box :first_aid %>
+  </div>
+
+  <div class="field">
+    <%= form.label :life_guard %>
+    <%= form.check_box :life_guard %>
+  </div>
+
+  <div class="field">
+    <%= form.label :nurse %>
+    <%= form.check_box :nurse %>
+  </div>
+
+  <div class="field">
+    <%= form.label :emt %>
+    <%= form.check_box :emt %>
+  </div>
+
+  <div class="field">
+    <%= form.label :have_worked_with_abused %>
+    <%= form.check_box :have_worked_with_abused %>
+  </div>
+
+  <div class="field">
+    <%= form.label :describe_work_with_abused %>
+    <%= form.text_field :describe_work_with_abused %>
+  </div>
+
+  <div class="field">
+    <%= form.label :was_victim %>
+    <%= form.check_box :was_victim %>
+  </div>
+
+  <div class="field">
+    <%= form.label :discuss_abuse %>
+    <%= form.check_box :discuss_abuse %>
+  </div>
+
+  <div class="field">
+    <%= form.label :clarify %>
+    <%= form.text_field :clarify %>
+  </div>
+
+  <div class="field">
+    <%= form.label :why_you_want_to_counsel %>
+    <%= form.text_field :why_you_want_to_counsel %>
+  </div>
+
+  <div class="field">
+    <%= form.label :user_id %>
+    <%= form.text_field :user_id %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

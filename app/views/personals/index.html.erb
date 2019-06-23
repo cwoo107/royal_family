@@ -1,0 +1,71 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Personals</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Birthdate</th>
+      <th>Sex</th>
+      <th>Married</th>
+      <th>Occupation</th>
+      <th>Employer</th>
+      <th>Years in state</th>
+      <th>Months in state</th>
+      <th>Emergency contact</th>
+      <th>Relationship</th>
+      <th>Emer phone</th>
+      <th>Shirt size</th>
+      <th>Cpr</th>
+      <th>First aid</th>
+      <th>Life guard</th>
+      <th>Nurse</th>
+      <th>Emt</th>
+      <th>Have worked with abused</th>
+      <th>Describe work with abused</th>
+      <th>Was victim</th>
+      <th>Discuss abuse</th>
+      <th>Clarify</th>
+      <th>Why you want to counsel</th>
+      <th>User</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @personals.each do |personal| %>
+      <tr>
+        <td><%= personal.birthdate %></td>
+        <td><%= personal.sex %></td>
+        <td><%= personal.married %></td>
+        <td><%= personal.occupation %></td>
+        <td><%= personal.employer %></td>
+        <td><%= personal.years_in_state %></td>
+        <td><%= personal.months_in_state %></td>
+        <td><%= personal.emergency_contact %></td>
+        <td><%= personal.relationship %></td>
+        <td><%= personal.emer_phone %></td>
+        <td><%= personal.shirt_size %></td>
+        <td><%= personal.cpr %></td>
+        <td><%= personal.first_aid %></td>
+        <td><%= personal.life_guard %></td>
+        <td><%= personal.nurse %></td>
+        <td><%= personal.emt %></td>
+        <td><%= personal.have_worked_with_abused %></td>
+        <td><%= personal.describe_work_with_abused %></td>
+        <td><%= personal.was_victim %></td>
+        <td><%= personal.discuss_abuse %></td>
+        <td><%= personal.clarify %></td>
+        <td><%= personal.why_you_want_to_counsel %></td>
+        <td><%= personal.user %></td>
+        <td><%= link_to 'Show', personal %></td>
+        <td><%= link_to 'Edit', edit_personal_path(personal) %></td>
+        <td><%= link_to 'Destroy', personal, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Personal', new_personal_path %>

@@ -1,0 +1,51 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  birthdate: MyString
+  sex: MyString
+  married: false
+  occupation: MyString
+  employer: MyString
+  years_in_state: MyString
+  months_in_state: MyString
+  emergency_contact: MyString
+  relationship: MyString
+  emer_phone: MyString
+  shirt_size: MyString
+  cpr: false
+  first_aid: false
+  life_guard: false
+  nurse: false
+  emt: false
+  have_worked_with_abused: false
+  describe_work_with_abused: MyString
+  was_victim: false
+  discuss_abuse: false
+  clarify: MyString
+  why_you_want_to_counsel: MyString
+  user: one
+
+two:
+  birthdate: MyString
+  sex: MyString
+  married: false
+  occupation: MyString
+  employer: MyString
+  years_in_state: MyString
+  months_in_state: MyString
+  emergency_contact: MyString
+  relationship: MyString
+  emer_phone: MyString
+  shirt_size: MyString
+  cpr: false
+  first_aid: false
+  life_guard: false
+  nurse: false
+  emt: false
+  have_worked_with_abused: false
+  describe_work_with_abused: MyString
+  was_victim: false
+  discuss_abuse: false
+  clarify: MyString
+  why_you_want_to_counsel: MyString
+  user: two

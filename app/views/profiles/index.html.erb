@@ -4,12 +4,13 @@
 
   <div class='row' style='padding-top:50px'>
     <div class='col-md-4'>
-    <h4> About Me </h4>
+    
       <% if current_user.profile %>
-        <h5 style='text-align:left !important;'> <a style='padding-left:10px'>Name: <%= current_user.profile.first_name %> <%= current_user.profile.last_name %> </a></h5>
-        <h5 style='text-align:left !important;'> <a style='padding-left:10px'>Email: <%= current_user.email %> </a></h5>
-        <h5 style='text-align:left !important;'> <a style='padding-left:10px'>Phone: <%= current_user.profile.phone %> </a></h5>
-        <h5 style='text-align:left !important;'> <a style='padding-left:10px'>Address: <%= current_user.profile.address %> </a></h5>
+      <h4> <%= current_user.profile.first_name %> <%= current_user.profile.last_name %> </h4>
+        
+        <h5 style='text-align:left !important;'> Email: <%= current_user.email %> </h5>
+        <h5 style='text-align:left !important;'> Phone: <%= current_user.profile.phone %> </h5>
+        <h5 style='text-align:left !important;'> Address: <%= current_user.profile.address %> <%= current_user.profile.city %>, <%= current_user.profile.state%> </h5>
         <h6> <%= link_to 'Edit', edit_profile_path(current_user.profile) %> </h6>
       <% else %>
        
@@ -36,9 +37,12 @@
               <button type="button" class="btn btn-info">Criminal Background</button>
             </div>
           </div>
-
-          <div class='row'>
-
+        
+          <div class='row' style='padding-top: 15px'>
+            <div class='col-md-12'>
+              <button type="button" class="btn btn-info">Submit Application</button>
+            </div>
+          
         </div>
       </div>
     </div>

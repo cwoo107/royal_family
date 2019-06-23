@@ -1,0 +1,2 @@
+json.extract! personal, :id, :birthdate, :sex, :married, :occupation, :employer, :years_in_state, :months_in_state, :emergency_contact, :relationship, :emer_phone, :shirt_size, :cpr, :first_aid, :life_guard, :nurse, :emt, :have_worked_with_abused, :describe_work_with_abused, :was_victim, :discuss_abuse, :clarify, :why_you_want_to_counsel, :user_id, :created_at, :updated_at
+json.url personal_url(personal, format: :json)

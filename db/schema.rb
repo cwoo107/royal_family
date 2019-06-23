@@ -10,10 +10,39 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_06_22_220908) do
+ActiveRecord::Schema.define(version: 2019_06_23_170843) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "personals", force: :cascade do |t|
+    t.string "birthdate"
+    t.string "sex"
+    t.boolean "married"
+    t.string "occupation"
+    t.string "employer"
+    t.string "years_in_state"
+    t.string "months_in_state"
+    t.string "emergency_contact"
+    t.string "relationship"
+    t.string "emer_phone"
+    t.string "shirt_size"
+    t.boolean "cpr"
+    t.boolean "first_aid"
+    t.boolean "life_guard"
+    t.boolean "nurse"
+    t.boolean "emt"
+    t.boolean "have_worked_with_abused"
+    t.string "describe_work_with_abused"
+    t.boolean "was_victim"
+    t.boolean "discuss_abuse"
+    t.string "clarify"
+    t.string "why_you_want_to_counsel"
+    t.bigint "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_personals_on_user_id"
+  end
 
   create_table "profiles", force: :cascade do |t|
     t.string "first_name"
@@ -42,5 +71,6 @@ ActiveRecord::Schema.define(version: 2019_06_22_220908) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "personals", "users"
   add_foreign_key "profiles", "users"
 end
