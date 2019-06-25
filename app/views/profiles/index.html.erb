@@ -25,10 +25,10 @@
             <div class='col-md-6'>
               <button type="button" class="btn btn-info">
               <% if current_user.personal %>
-              <%= link_to 'Personal Profile', edit_personal_path(current_user.personal)%>
+              <%= link_to 'Detailed Profile', edit_personal_path(current_user.personal)%>
               <%else%>
               
-              <%= link_to 'Personal Profile', new_personal_path%>
+              <%= link_to 'Detailed Profile', new_personal_path%>
               <%end%>
               </button>
             </div>

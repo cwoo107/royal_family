@@ -6,4 +6,5 @@ class User < ApplicationRecord
 
   has_one :profile
   has_one :personal
+  has_one :full_profile
 end

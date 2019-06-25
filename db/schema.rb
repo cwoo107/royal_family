@@ -10,10 +10,31 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_06_23_170843) do
+ActiveRecord::Schema.define(version: 2019_06_25_194222) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "full_profiles", force: :cascade do |t|
+    t.boolean "commited_to_christ"
+    t.string "where_when"
+    t.string "church"
+    t.string "how_long"
+    t.string "pastors_name"
+    t.string "church_phone"
+    t.boolean "worked_with_children"
+    t.string "describe"
+    t.boolean "worked_with_abused"
+    t.boolean "can_lead_devotion"
+    t.string "description_of_you"
+    t.string "strengths"
+    t.string "weaknesses"
+    t.string "preferred_age"
+    t.bigint "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_full_profiles_on_user_id"
+  end
 
   create_table "personals", force: :cascade do |t|
     t.string "birthdate"
@@ -71,6 +92,7 @@ ActiveRecord::Schema.define(version: 2019_06_23_170843) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "full_profiles", "users"
   add_foreign_key "personals", "users"
   add_foreign_key "profiles", "users"
 end

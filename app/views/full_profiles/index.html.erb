@@ -1,0 +1,57 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Full Profiles</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Commited to christ</th>
+      <th>Where when</th>
+      <th>Church</th>
+      <th>How long</th>
+      <th>Pastors name</th>
+      <th>Church phone</th>
+      <th>Worked with children</th>
+      <th>Describe</th>
+      <th>Worked with abused</th>
+      <th>Describe</th>
+      <th>Can lead devotion</th>
+      <th>Description of you</th>
+      <th>Strengths</th>
+      <th>Weaknesses</th>
+      <th>Preferred age</th>
+      <th>User</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @full_profiles.each do |full_profile| %>
+      <tr>
+        <td><%= full_profile.commited_to_christ %></td>
+        <td><%= full_profile.where_when %></td>
+        <td><%= full_profile.church %></td>
+        <td><%= full_profile.how_long %></td>
+        <td><%= full_profile.pastors_name %></td>
+        <td><%= full_profile.church_phone %></td>
+        <td><%= full_profile.worked_with_children %></td>
+        <td><%= full_profile.describe %></td>
+        <td><%= full_profile.worked_with_abused %></td>
+        <td><%= full_profile.describe %></td>
+        <td><%= full_profile.can_lead_devotion %></td>
+        <td><%= full_profile.description_of_you %></td>
+        <td><%= full_profile.strengths %></td>
+        <td><%= full_profile.weaknesses %></td>
+        <td><%= full_profile.preferred_age %></td>
+        <td><%= full_profile.user %></td>
+        <td><%= link_to 'Show', full_profile %></td>
+        <td><%= link_to 'Edit', edit_full_profile_path(full_profile) %></td>
+        <td><%= link_to 'Destroy', full_profile, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Full Profile', new_full_profile_path %>

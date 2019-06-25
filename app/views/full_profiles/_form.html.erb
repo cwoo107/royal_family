@@ -1,0 +1,97 @@
+<%= form_with(model: full_profile, local: true) do |form| %>
+  <% if full_profile.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(full_profile.errors.count, "error") %> prohibited this full_profile from being saved:</h2>
+
+      <ul>
+      <% full_profile.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :commited_to_christ %>
+    <%= form.check_box :commited_to_christ %>
+  </div>
+
+  <div class="field">
+    <%= form.label :where_when %>
+    <%= form.text_field :where_when %>
+  </div>
+
+  <div class="field">
+    <%= form.label :church %>
+    <%= form.text_field :church %>
+  </div>
+
+  <div class="field">
+    <%= form.label :how_long %>
+    <%= form.text_field :how_long %>
+  </div>
+
+  <div class="field">
+    <%= form.label :pastors_name %>
+    <%= form.text_field :pastors_name %>
+  </div>
+
+  <div class="field">
+    <%= form.label :church_phone %>
+    <%= form.text_field :church_phone %>
+  </div>
+
+  <div class="field">
+    <%= form.label :worked_with_children %>
+    <%= form.check_box :worked_with_children %>
+  </div>
+
+  <div class="field">
+    <%= form.label :describe %>
+    <%= form.text_field :describe %>
+  </div>
+
+  <div class="field">
+    <%= form.label :worked_with_abused %>
+    <%= form.check_box :worked_with_abused %>
+  </div>
+
+  <div class="field">
+    <%= form.label :describe %>
+    <%= form.text_field :describe %>
+  </div>
+
+  <div class="field">
+    <%= form.label :can_lead_devotion %>
+    <%= form.check_box :can_lead_devotion %>
+  </div>
+
+  <div class="field">
+    <%= form.label :description_of_you %>
+    <%= form.text_field :description_of_you %>
+  </div>
+
+  <div class="field">
+    <%= form.label :strengths %>
+    <%= form.text_field :strengths %>
+  </div>
+
+  <div class="field">
+    <%= form.label :weaknesses %>
+    <%= form.text_field :weaknesses %>
+  </div>
+
+  <div class="field">
+    <%= form.label :preferred_age %>
+    <%= form.text_field :preferred_age %>
+  </div>
+
+  <div class="field">
+    <%= form.label :user_id %>
+    <%= form.text_field :user_id %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
