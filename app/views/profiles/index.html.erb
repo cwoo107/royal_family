@@ -33,7 +33,13 @@
               </button>
             </div>
             <div class='col-md-6'>
-              <button type="button" class="btn btn-info">Personal References</button>
+              <button type="button" class="btn btn-info"><% if current_user.full_profile %>
+              <%= link_to 'About Me', edit_full_profile_path(current_user.full_profile)%>
+              <%else%>
+              
+              <%= link_to 'About Me', new_full_profile_path%>
+              <%end%>
+              </button>
             </div>
           </div>
           <div class='row' style='padding-top:15px'>

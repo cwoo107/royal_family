@@ -1,10 +1,11 @@
 class FullProfilesController < ApplicationController
   before_action :set_full_profile, only: [:show, :edit, :update, :destroy]
-
+  before_action :authenticate_user!
   # GET /full_profiles
   # GET /full_profiles.json
   def index
     @full_profiles = FullProfile.all
+    @personals = current_user.full_profile
   end
 
   # GET /full_profiles/1
@@ -25,6 +26,7 @@ class FullProfilesController < ApplicationController
   # POST /full_profiles.json
   def create
     @full_profile = FullProfile.new(full_profile_params)
+    @full_profile.user_id = current_user.id
 
     respond_to do |format|
       if @full_profile.save
