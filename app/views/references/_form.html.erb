@@ -1,0 +1,97 @@
+<%= form_with(model: reference, local: true) do |form| %>
+  <% if reference.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(reference.errors.count, "error") %> prohibited this reference from being saved:</h2>
+
+      <ul>
+      <% reference.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :high %>
+    <%= form.text_field :high %>
+  </div>
+
+  <div class="field">
+    <%= form.label :school %>
+    <%= form.text_field :school %>
+  </div>
+
+  <div class="field">
+    <%= form.label :date1 %>
+    <%= form.text_field :date1 %>
+  </div>
+
+  <div class="field">
+    <%= form.label :college %>
+    <%= form.text_field :college %>
+  </div>
+
+  <div class="field">
+    <%= form.label :major %>
+    <%= form.text_field :major %>
+  </div>
+
+  <div class="field">
+    <%= form.label :date2 %>
+    <%= form.text_field :date2 %>
+  </div>
+
+  <div class="field">
+    <%= form.label :reference1 %>
+    <%= form.text_field :reference1 %>
+  </div>
+
+  <div class="field">
+    <%= form.label :ref1_addr %>
+    <%= form.text_field :ref1_addr %>
+  </div>
+
+  <div class="field">
+    <%= form.label :ref1_phone %>
+    <%= form.text_field :ref1_phone %>
+  </div>
+
+  <div class="field">
+    <%= form.label :reference2 %>
+    <%= form.text_field :reference2 %>
+  </div>
+
+  <div class="field">
+    <%= form.label :ref2_addr %>
+    <%= form.text_field :ref2_addr %>
+  </div>
+
+  <div class="field">
+    <%= form.label :ref2_phone %>
+    <%= form.text_field :ref2_phone %>
+  </div>
+
+  <div class="field">
+    <%= form.label :reference3 %>
+    <%= form.text_field :reference3 %>
+  </div>
+
+  <div class="field">
+    <%= form.label :ref3_addr %>
+    <%= form.text_field :ref3_addr %>
+  </div>
+
+  <div class="field">
+    <%= form.label :ref3_phone %>
+    <%= form.text_field :ref3_phone %>
+  </div>
+
+  <div class="field">
+    <%= form.label :user_id %>
+    <%= form.text_field :user_id %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_06_25_194222) do
+ActiveRecord::Schema.define(version: 2019_06_26_015451) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -80,6 +80,28 @@ ActiveRecord::Schema.define(version: 2019_06_25_194222) do
     t.index ["user_id"], name: "index_profiles_on_user_id"
   end
 
+  create_table "references", force: :cascade do |t|
+    t.string "high"
+    t.string "school"
+    t.string "date1"
+    t.string "college"
+    t.string "major"
+    t.string "date2"
+    t.string "reference1"
+    t.string "ref1_addr"
+    t.string "ref1_phone"
+    t.string "reference2"
+    t.string "ref2_addr"
+    t.string "ref2_phone"
+    t.string "reference3"
+    t.string "ref3_addr"
+    t.string "ref3_phone"
+    t.bigint "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_references_on_user_id"
+  end
+
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
@@ -95,4 +117,5 @@ ActiveRecord::Schema.define(version: 2019_06_25_194222) do
   add_foreign_key "full_profiles", "users"
   add_foreign_key "personals", "users"
   add_foreign_key "profiles", "users"
+  add_foreign_key "references", "users"
 end

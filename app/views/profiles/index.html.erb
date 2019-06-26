@@ -23,23 +23,29 @@
         <div class='container-fluid text-center' id='white_link'>
           <div class='row' style='padding-top:15px'>
             <div class='col-md-6'>
-              <button type="button" class="btn btn-info">
+              
               <% if current_user.personal %>
-              <%= link_to 'Detailed Profile', edit_personal_path(current_user.personal)%>
+
+              <%= link_to 'Detailed Profile', edit_personal_path(current_user.personal), :class => 'btn btn-info'%>
+
               <%else%>
               
-              <%= link_to 'Detailed Profile', new_personal_path%>
+              <%= link_to 'Detailed Profile', new_personal_path, :class => 'btn btn-warning'%>
+
               <%end%>
-              </button>
+            
             </div>
             <div class='col-md-6'>
-              <button type="button" class="btn btn-info"><% if current_user.full_profile %>
-              <%= link_to 'About Me', edit_full_profile_path(current_user.full_profile)%>
+              <% if current_user.full_profile %>
+
+              <%= link_to 'About Me', edit_full_profile_path(current_user.full_profile), :class => 'btn btn-info'%>
+
               <%else%>
               
-              <%= link_to 'About Me', new_full_profile_path%>
+              <%= link_to 'About Me', new_full_profile_path, :class => 'btn btn-warning'%>
+
               <%end%>
-              </button>
+             
             </div>
           </div>
           <div class='row' style='padding-top:15px'>

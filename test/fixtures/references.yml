@@ -1,0 +1,37 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  high: MyString
+  school: MyString
+  date1: MyString
+  college: MyString
+  major: MyString
+  date2: MyString
+  reference1: MyString
+  ref1_addr: MyString
+  ref1_phone: MyString
+  reference2: MyString
+  ref2_addr: MyString
+  ref2_phone: MyString
+  reference3: MyString
+  ref3_addr: MyString
+  ref3_phone: MyString
+  user: one
+
+two:
+  high: MyString
+  school: MyString
+  date1: MyString
+  college: MyString
+  major: MyString
+  date2: MyString
+  reference1: MyString
+  ref1_addr: MyString
+  ref1_phone: MyString
+  reference2: MyString
+  ref2_addr: MyString
+  ref2_phone: MyString
+  reference3: MyString
+  ref3_addr: MyString
+  ref3_phone: MyString
+  user: two

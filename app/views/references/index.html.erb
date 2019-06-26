@@ -1,0 +1,57 @@
+<p id="notice"><%= notice %></p>
+
+<h1>References</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>High</th>
+      <th>School</th>
+      <th>Date1</th>
+      <th>College</th>
+      <th>Major</th>
+      <th>Date2</th>
+      <th>Reference1</th>
+      <th>Ref1 addr</th>
+      <th>Ref1 phone</th>
+      <th>Reference2</th>
+      <th>Ref2 addr</th>
+      <th>Ref2 phone</th>
+      <th>Reference3</th>
+      <th>Ref3 addr</th>
+      <th>Ref3 phone</th>
+      <th>User</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @references.each do |reference| %>
+      <tr>
+        <td><%= reference.high %></td>
+        <td><%= reference.school %></td>
+        <td><%= reference.date1 %></td>
+        <td><%= reference.college %></td>
+        <td><%= reference.major %></td>
+        <td><%= reference.date2 %></td>
+        <td><%= reference.reference1 %></td>
+        <td><%= reference.ref1_addr %></td>
+        <td><%= reference.ref1_phone %></td>
+        <td><%= reference.reference2 %></td>
+        <td><%= reference.ref2_addr %></td>
+        <td><%= reference.ref2_phone %></td>
+        <td><%= reference.reference3 %></td>
+        <td><%= reference.ref3_addr %></td>
+        <td><%= reference.ref3_phone %></td>
+        <td><%= reference.user %></td>
+        <td><%= link_to 'Show', reference %></td>
+        <td><%= link_to 'Edit', edit_reference_path(reference) %></td>
+        <td><%= link_to 'Destroy', reference, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Reference', new_reference_path %>
